@@ -6,16 +6,14 @@ import './index.css';
 import Game from './containers/Game';
 import reducer from './reducers';
 import * as serviceWorker from './serviceWorker';
+import { rootReducer } from './store/index';
 
-const store = createStore(
-  reducer, /* preloadedState, */
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-        <Game />
-    </Provider>,
+    <Game />
+  </Provider>,
   document.getElementById('root')
 );
 
